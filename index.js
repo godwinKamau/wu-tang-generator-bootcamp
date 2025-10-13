@@ -81,13 +81,11 @@ const server = http.createServer(function(req, res) {
     }
     else if(page == '/namemaker'){
         if(params['generator']) {
-            //loop through name, collecting the numerical value of the sum of the person's character code
-            //modulo the sum by the list of names
-            //return the name at the index of the product
-            let answer = ''
-            let firstNumber = 0
-            let lastNumber = 0
-            const nameArray = params['generator'].split(' ')
+            
+            let answer = ''         //collects the final answer
+            let firstNumber = 0     //cipher for the first name
+            let lastNumber = 0      //cipher for the last name
+            const nameArray = params['generator'].split(' ')    //split the first and 
             
             const firstName = nameArray[0]
             for (let i=0; i < firstName.length; i++){
@@ -101,8 +99,6 @@ const server = http.createServer(function(req, res) {
             }
             answer += wuLastDictionary[lastNumber % wuLastDictionary.length]
              
-            
-
             console.log(answer)
             res.writeHead(200, {'Content-Type': 'text/text'});
             res.end(answer)
@@ -114,7 +110,13 @@ const server = http.createServer(function(req, res) {
           res.write(data);
           res.end();
         });
-      }
+    }
+    else if (page == '/css/style.css'){
+        fs.readFile('css/style.css', function(err, data) {
+        res.write(data);
+        res.end();
+        });
+    }
 
 })
 

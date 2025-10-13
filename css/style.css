@@ -1,0 +1,177 @@
+:root {
+    --background:#2b2d31;
+    --hookersgreen:#4E6E5D;
+    --shamrock:#4DA167;
+    --pastel:#3BC14A;
+    --wolf:#CFCFCF;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    height:1000px;
+}
+
+.container {
+    background: var(--background);
+    height:700px;
+    width:900px;
+    border-radius:10%;
+    display: flex;
+    flex-direction: column;
+    border:1px solid var(--shamrock);
+    box-shadow:1px 0 1.2em var(--pastel),1px 0 1.2em var(--pastel);
+}
+
+.title {
+    flex:2;
+    font-family: 'BBH Sans Bartle',Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color:var(--shamrock);
+    text-shadow: 1px 0 5px var(--pastel);
+    border-bottom: 5px double var(--shamrock);
+}
+
+.instructions {
+    flex:1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-family: 'BBH Sans Bogle',Arial, Helvetica, sans-serif;
+    color:var(--shamrock);
+    text-shadow: 1px 0 3px var(--pastel);
+    letter-spacing: 2px;
+    border-bottom: 1px dashed var(--hookersgreen);
+}
+
+.insertName {
+    flex:1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 5px double var(--shamrock);
+}
+
+input[type='text'] {
+    background: black;
+    border: none;
+    padding:1rem;
+    font-size: 1.5rem;
+    color:var(--pastel);
+    font-family: 'BBH Sans Bogle',Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+}
+
+#wuMaker {
+    height:4rem;
+    width:30%;
+    background-color: black;
+    color:var(--shamrock);
+    font-family: 'BBH Sans Bogle',Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    
+        
+        
+    
+    /* Hovering glowing effect from Adrian Roselli: https://codepen.io/aardrian/pen/abQKbpP */
+        border-radius: .5em;
+        transition: all .2s ease-in;
+        background-repeat: no-repeat;
+        background-image: linear-gradient(90deg, var(--shamrock) 0, transparent 1em, transparent 100%),
+        linear-gradient(0deg, var(--shamrock) 0, transparent 1em, transparent 100%),
+        linear-gradient(270deg, var(--shamrock) 0, transparent 1em, transparent 100%),
+        linear-gradient(180deg, var(--shamrock) 0, transparent 1em, transparent 100%);
+        background-position: -1em 0, 0 1em, 1em 0, 0 -1em;
+        
+        font-size: 150%;
+        white-space: nowrap;
+
+}
+
+        button:focus, button:hover {
+            border: .2em solid var(--pastel);
+            box-shadow: 0 0 1.2em var(--pastel), inset 0 0 1.2em var(--pastel);
+            outline: none;
+        }
+
+
+
+.wuProduct {
+    flex:2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'BBH Sans Bogle',Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    font-size: 5rem;
+    color: var(--shamrock);
+    text-shadow: 0 0 2px var(--pastel);
+    letter-spacing: 1px;
+}
+
+h3 {
+    color:var(--wolf);
+    font-size: 1.5rem;
+}

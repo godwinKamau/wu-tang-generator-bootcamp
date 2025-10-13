@@ -6,12 +6,30 @@
     <title>Wu-Tang Generator</title>
     <meta name="description" content="Creating a Wu-Tang name generator">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=BBH+Sans+Bogle&family=BBH+Sans+Hegarty&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <input type="text" id="firstname">
-    <input type="text" id="lastname">
-    <h2></h2>
-    <button id="wuMaker"></button>
+    <div class="container">
+        <section class="title">
+            <h1>Wu-Tang Name Generator</h1>
+        </section>
+        <section class="instructions">
+            <p>Insert your first and last name</p>
+        </section>
+        <section class="insertName">
+            <input type="text" id="firstname" placeholder="First Name">
+            <input type="text" id="lastname" placeholder="Last Name">
+            <button id="wuMaker">Enter the Clan</button>
+        </section>
+        <section class="wuProduct">
+            <h3></h3>
+            <h2></h2>
+        </section>
+        <div></div>
+    </div>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

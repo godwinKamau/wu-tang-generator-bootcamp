@@ -7,6 +7,7 @@ function generator(){
         .then(res => res.text())
         .then(data => {
             console.log(data)
+            document.querySelector('h3').innerText = `From henceforth, you shall be known as`
             document.querySelector('h2').innerText = data
         })
 }
