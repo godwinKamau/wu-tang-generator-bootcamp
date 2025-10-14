@@ -1,17 +1,43 @@
 document.querySelector('#wuMaker').addEventListener('click',generator)
-const radios = document.querySelectorAll('input[type="radio"]')
+const radios = document.querySelectorAll('input[name="dynasty"]')
+const yinYangs = document.querySelectorAll('input[name="yinYang"]')
 
 
 function generator(){
-    const first = document.querySelector('#firstname').value.toLowerCase()
-    const last = document.querySelector('#lastname').value.toLowerCase()
+    let firstNumber = 0     //cipher for the first name
+    let lastNumber = 0      //cipher for the last name
+
+    const firstName = document.querySelector('#firstname').value.toLowerCase()
+    const lastName = document.querySelector('#lastname').value.toLowerCase()
+
+    for (let i=0; i < firstName.length; i++){
+        firstNumber += firstName.charCodeAt(i)
+    }
+
+    for (let i=0; i < lastName.length; i++){
+        lastNumber += lastName.charCodeAt(i)
+    }
+
+    let radioValue
+    let yinYang
     radios.forEach(radio => {
         if(radio.checked){
-            const radioValue = radio.value
+            radioValue = radio.value
+            firstNumber += Number(radioValue)
         }
     })
-    console.log(document.querySelector('#color').value)
-    fetch(`/namemaker?generator=${first}+${last}`)
+
+    const dropdown = document.querySelector('#color').value
+    firstNumber += Number(dropdown)
+
+    yinYangs.forEach(radio => {
+        if(radio.checked){
+            yinYang = radio.value
+            lastNumber += Number(yinYang)
+        }
+    })
+
+    fetch(`/namemaker?generator=${firstNumber}+w+${lastNumber}`)
         .then(res => res.text())
         .then(data => {
             console.log(data)

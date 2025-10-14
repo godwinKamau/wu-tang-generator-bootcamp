@@ -62,7 +62,9 @@ body{
     align-content: center;
     flex-wrap: wrap;
     justify-content: center;
-    height:1000px;
+    height:100vh;
+    color:var(--shamrock);
+    text-shadow: 1px 0 5px var(--pastel);
 }
 
 .container {
@@ -92,8 +94,8 @@ body{
     flex:1;
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 2rem;
+    justify-content: space-around;
+    font-size: 1rem;
     font-family: 'BBH Sans Bogle',Arial, Helvetica, sans-serif;
     color:var(--shamrock);
     text-shadow: 1px 0 3px var(--pastel);
@@ -101,12 +103,12 @@ body{
     border-bottom: 1px dashed var(--hookersgreen);
 }
 
-.insertName {
+.insertCreds {
     flex:1;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border-bottom: 5px double var(--shamrock);
+    border-bottom: 1px dashed var(--hookersgreen);
 }
 
 input[type='text'] {
@@ -117,6 +119,35 @@ input[type='text'] {
     color:var(--pastel);
     font-family: 'BBH Sans Bogle',Arial, Helvetica, sans-serif;
     letter-spacing: 1px;
+}
+
+.color {
+    flex:1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px dashed var(--hookersgreen);
+}
+
+.color section {
+    flex:1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:100%
+}
+
+.color section:nth-of-type(1){
+    border-right: 1px dashed var(--hookersgreen);
+    gap:15px;
+}
+
+.wuButton{
+    flex:1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 5px double var(--shamrock);
 }
 
 #wuMaker {

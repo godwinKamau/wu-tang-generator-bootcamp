@@ -80,29 +80,27 @@ const server = http.createServer(function(req, res) {
         });
     }
     else if(page == '/namemaker'){
+        
         if(params['generator']) {
-            
-            let answer = ''         //collects the final answer
-            let firstNumber = 0     //cipher for the first name
-            let lastNumber = 0      //cipher for the last name
-            const nameArray = params['generator'].split(' ')    //split the first and 
-            
-            const firstName = nameArray[0]
-            for (let i=0; i < firstName.length; i++){
-                firstNumber += firstName.charCodeAt(i)
-            }
-            answer += wuFirstDictionary[firstNumber % wuFirstDictionary.length] + ' '
 
-            const lastName = nameArray[1]
-            for (let i=0; i < lastName.length; i++){
-                lastNumber += lastName.charCodeAt(i)
-            }
-            answer += wuLastDictionary[lastNumber % wuLastDictionary.length]
-             
+            let answer = ''     //collects the final answer
+            
+            
+            const nameArray = params['generator'].split(' w ')    //split the first and 
+            console.log(nameArray)
+            const firstNumber = nameArray[0]
+            
+            
+            
+            const lastNumber = nameArray[1]
+            
+            answer += wuFirstDictionary[firstNumber%wuFirstDictionary.length] + ' ' + wuLastDictionary[lastNumber%wuLastDictionary.length]  
             console.log(answer)
             res.writeHead(200, {'Content-Type': 'text/text'});
-            res.end(answer)
+            res.end(answer)  
         }
+        
+        
     }
     else if (page == '/js/main.js'){
         fs.readFile('js/main.js', function(err, data) {
